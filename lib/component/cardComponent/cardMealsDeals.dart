@@ -10,7 +10,8 @@ class cardMealDeals extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
     margin: EdgeInsets.only(right: 10),
-    elevation: 10, // Menambahkan elevasi untuk efek bayangan
+    color: Colors.white,
+    elevation: 3,
     child: SizedBox(
       height: 210,
       width: 170,

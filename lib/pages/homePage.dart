@@ -6,9 +6,6 @@ import 'package:flutter_uts/pages/allMealDeals.dart';
 import 'package:flutter_uts/pages/allPopPage.dart';
 import 'package:flutter_uts/component/cardComponent/cardMostPop.dart';
 import 'package:flutter_uts/data/data.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter_uts/component/carrouselComponent/carrouselHome.dart';
 import 'package:flutter_uts/pages/bookMarkPage.dart';
 import 'package:flutter_uts/pages/discoveryPage.dart';
 import 'package:flutter_uts/pages/profilePage.dart';
@@ -22,14 +19,25 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyHome> {
-
-  int carIndex = 0; // Ini buat carrousel index page
   @override
   Widget build(BuildContext context){
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Sydney CBD")),
+          automaticallyImplyLeading: false,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back,color: Colors.amber),
+            onPressed: () {
+            },
+          ),
+          title: Text(
+            "Sydney CBD",
+            style: TextStyle(
+              fontWeight: FontWeight.bold
+            ),
+            ),
+          centerTitle: true,
         ),
+
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,102 +72,84 @@ class _MyAppState extends State<MyHome> {
               SizedBox(height: 10,),
               
               // Image
-              Stack(
-                children: [
-                  Image.asset(
-                    ("lib/images/pizza.jpg"),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter, 
-                        end: Alignment.topCenter,
-                        colors: [
-                          Colors.transparent, // Adjust opacity and colors as needed
-                          Colors.black,
-                        ],
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 10,
-                    bottom: 7,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "12 Places",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
+              SizedBox(
+                height: 340,
+                child: Stack(
+                  children: [
+                    Image.asset(fit: BoxFit.contain,"lib/images/ff.jpg",width: double.infinity, height: double.infinity,),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter, 
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.transparent,
+                            Colors.black,
+                          ],
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    left: 10,
-                    bottom: 24,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "American Style",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    right: 10,
-                    bottom: 24,
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 4),
-                          width: 10,
-                          height: 10,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
+                    Positioned(
+                      left: 10,
+                      bottom: 7,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "12 Places",
+                          style: TextStyle(
+                            fontSize: 12,
                             color: Colors.white,
                           ),
                         ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 4),
-                          width: 10,
-                          height: 10,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 4),
-                          width: 10,
-                          height: 10,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 4),
-                          width: 10,
-                          height: 10,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ],
+                    Positioned(
+                      left: 10,
+                      bottom: 24,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "American Style",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      right: 10,
+                      bottom: 24,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 5),
+                              width: 7,
+                              height: 7,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                            ),
+                          ),
+                          for (int i = 0; i < 3; i++)
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 5),
+                              width: 7,
+                              height: 7,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
 
-
               
-              
-              SizedBox(height: 60,),
+              SizedBox(height: 30,),
               
               // Most Popular
               Padding(
@@ -182,11 +172,14 @@ class _MyAppState extends State<MyHome> {
                           ),
                         );
                       },
-                      child: Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.lightBlue,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 5.0),
+                        child: Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.lightBlue,
+                          ),
                         ),
                       ),
                     ),
@@ -199,25 +192,29 @@ class _MyAppState extends State<MyHome> {
               // Most Popular Card
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      // Generate Card Disini
-                      for (var i = 0; i<titles.length; i++)
-                        cardMostPop(
-                          title: titles[i],
-                          addr: address[i],
-                          type: types[i],
-                          img : images[i]
-                        )
-                    ],
-
+                child: Container(
+                  color: Colors.white,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        // Generate Card Disini
+                        for (var i = 0; i<titles.length; i++)
+                          cardMostPop(
+                            title: titles[i],
+                            addr: address[i],
+                            type: types[i],
+                            img : images[i]
+                          )
+                      ],
+                  
+                    ),
                   ),
                 ),
               ),
 
-              SizedBox(height: 40,),
+              SizedBox(height: 10,),
+              
               // Meals Deals
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -239,11 +236,14 @@ class _MyAppState extends State<MyHome> {
                           ),
                         );
                       },
-                      child: Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.lightBlue,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 5.0),
+                        child: Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.lightBlue,
+                          ),
                         ),
                       ),
                     ),
@@ -257,25 +257,28 @@ class _MyAppState extends State<MyHome> {
               // Meals Deals Card
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      // Generate Card Disini
-                      for (var i = 0; i<titles.length; i++)
-                        cardMealDeals(
-                          meals: meals[i],
-                          price: price[i],
-                          period: period[i],
-                          img: mealsimages[i],
-                        )
-                    ],
-
+                child: Container(
+                  color: Colors.white,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        // Generate Card Disini
+                        for (var i = 0; i<titles.length; i++)
+                          cardMealDeals(
+                            meals: meals[i],
+                            price: price[i],
+                            period: period[i],
+                            img: mealsimages[i],
+                          )
+                      ],
+                  
+                        ),
                       ),
-                    ),
+                ),
                 ),
 
-                SizedBox(height: 10,)
+                SizedBox(height: 20,)
               ],
             ),
           ),
@@ -298,7 +301,7 @@ class _MyAppState extends State<MyHome> {
             ),
             BottomNavigationBarItem(
               label: "Top Foodie",
-              icon: Icon(Icons.compare),
+              icon: Icon(Icons.emoji_events),
             ),
             BottomNavigationBarItem(
               label: "Profile",

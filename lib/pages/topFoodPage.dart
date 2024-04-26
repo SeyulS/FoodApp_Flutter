@@ -16,8 +16,16 @@ class _MyAppState extends State<topFoodPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        body: Center(
-          child: Text("TopFoodie Page"),
+        body: Container(
+          color: Colors.yellowAccent,
+          child: Center(
+            child: Container(
+              child: Text("Top Foodie Page",
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),),
+            ),
+          ),
         ),
         // Navigation Bar Bottom
         bottomNavigationBar: BottomNavigationBar(
@@ -37,7 +45,7 @@ class _MyAppState extends State<topFoodPage> {
             ),
             BottomNavigationBarItem(
               label: "Top Foodie",
-              icon: Icon(Icons.compare),
+              icon: Icon(Icons.emoji_events),
             ),
             BottomNavigationBarItem(
               label: "Profile",

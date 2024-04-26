@@ -9,7 +9,8 @@ class cardMostPop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 10, // Menambahkan efek bayangan sedikit dengan elevasi 2
+      color: Colors.white,
+      elevation: 3,
       margin: EdgeInsets.only(right: 10),
       child: Container(
         height: 210,

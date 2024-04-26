@@ -16,8 +16,16 @@ class _MyAppState extends State<discoveryPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        body: Center(
-          child: Text("Discovery Page"),
+        body: Container(
+          color: Colors.blue[200],
+          child: Center(
+            child: Container(
+              child: Text("Discovery Page",
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),),
+            ),
+          ),
         ),
         // Navigation Bar Bottom
         bottomNavigationBar: BottomNavigationBar(
@@ -37,7 +45,7 @@ class _MyAppState extends State<discoveryPage> {
             ),
             BottomNavigationBarItem(
               label: "Top Foodie",
-              icon: Icon(Icons.compare),
+              icon: Icon(Icons.emoji_events),
             ),
             BottomNavigationBarItem(
               label: "Profile",

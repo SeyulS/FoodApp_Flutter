@@ -16,8 +16,16 @@ class _MyAppState extends State<bookMarkPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        body: Center(
-          child: Text("BookMark Page"),
+        body: Container(
+          color: Colors.green.shade300,
+          child: Center(
+            child: Container(
+              child: Text("Bookmark Page",
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),),
+            ),
+          ),
         ),
         // Navigation Bar Bottom
         bottomNavigationBar: BottomNavigationBar(
@@ -37,7 +45,7 @@ class _MyAppState extends State<bookMarkPage> {
             ),
             BottomNavigationBarItem(
               label: "Top Foodie",
-              icon: Icon(Icons.compare),
+              icon: Icon(Icons.emoji_events),
             ),
             BottomNavigationBarItem(
               label: "Profile",

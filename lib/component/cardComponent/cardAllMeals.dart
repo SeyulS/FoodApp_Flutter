@@ -9,13 +9,13 @@ class cardAllMeals extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.only(top: 10.0),
       child: Card(
         child: Column(
           children: [
             ClipRect(
               child: AspectRatio(
-                aspectRatio: 16/10, // atur rasio sesuai kebutuhan Anda
+                aspectRatio: 16/10,
                 child: Image(
                   image: AssetImage(img),
                   fit: BoxFit.fill,
@@ -75,6 +75,7 @@ class cardAllMeals extends StatelessWidget {
               ),
             ),
             
+            SizedBox(height: 10,)
           ],
         ),
       ),

@@ -198,12 +198,12 @@ class _MyAppState extends State<MyHome> {
                     child: Row(
                       children: [
                         // Generate Card Disini
-                        for (var i = 0; i<titles.length; i++)
+                        for (var i = 0; i<mostPopularData.length; i++)
                           cardMostPop(
-                            title: titles[i],
-                            addr: address[i],
-                            type: types[i],
-                            img : images[i]
+                            title: mostPopularData[i][0],
+                            addr: mostPopularData[i][1],
+                            type: mostPopularData[i][2],
+                            img : mostPopularData[i][3]
                           )
                       ],
                   
@@ -263,18 +263,17 @@ class _MyAppState extends State<MyHome> {
                     child: Row(
                       children: [
                         // Generate Card Disini
-                        for (var i = 0; i<titles.length; i++)
+                        for (var i = 0; i<mealDealsData.length; i++)
                           cardMealDeals(
-                            meals: meals[i],
-                            price: price[i],
-                            period: period[i],
-                            img: mealsimages[i],
-                          )
-                      ],
-                  
-                        ),
+                            meals: mealDealsData[i][0],
+                            price: mealDealsData[i][1],
+                            period: mealDealsData[i][2],
+                            img: mealDealsData[i][3],
+                          ),
+                        ],
                       ),
-                ),
+                    ),
+                  ),
                 ),
 
                 SizedBox(height: 20,)

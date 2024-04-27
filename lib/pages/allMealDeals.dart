@@ -31,13 +31,13 @@ class AllMealDealsPage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            for (var i = 0; i<titles.length; i++)
-            cardAllMeals(
-              meals: meals[i],
-              price: price[i],
-              period: period[i],
-              img: mealsimages[i],
-            ),
+            for (var i = 0; i<mealDealsData.length; i++)
+              cardAllMeals(
+                meals: mealDealsData[i][0],
+                price: mealDealsData[i][1],
+                period: mealDealsData[i][2],
+                img: mealDealsData[i][3],
+              ),
             SizedBox(height: 10,)
 
           ],

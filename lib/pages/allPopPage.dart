@@ -31,13 +31,13 @@ class AllPopPage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            for (var i = 0; i<titles.length; i++)
-            cardAllPopPage(
-              title: titles[i], 
-              addr: address[i], 
-              type: types[i], 
-              img: images[i]
-            ),
+            for (var i = 0; i<mostPopularData.length; i++)
+              cardAllPopPage(
+                title: mostPopularData[i][0],
+                addr: mostPopularData[i][1],
+                type: mostPopularData[i][2],
+                img : mostPopularData[i][3]
+              ),
             SizedBox(height: 10,)
 
           ],

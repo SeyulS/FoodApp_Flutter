@@ -32,7 +32,7 @@ var titles = [
     "lib/images/rawon.jpg",
     "lib/images/milow.jpg",
     "lib/images/coffee.jpg",
-    "lib/images/spag.jpg"
+    "lib/images/sushi.jpg"
   ];
 
   var meals = [
@@ -40,7 +40,7 @@ var titles = [
     "Rawon",
     "Milo Dinosaur",
     "Americano",
-    "Spagheti"
+    "Sushi"
   ];
 
   var price = [

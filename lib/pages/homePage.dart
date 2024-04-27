@@ -70,13 +70,12 @@ class _MyAppState extends State<MyHome> {
               ),
               
               SizedBox(height: 10,),
-              
               // Image
               SizedBox(
-                height: 340,
+                height: 300,
                 child: Stack(
                   children: [
-                    Image.asset(fit: BoxFit.contain,"lib/images/ff.jpg",width: double.infinity, height: double.infinity,),
+                    Image.asset(fit: BoxFit.cover,"lib/images/sushi.jpg",width: double.infinity, height: double.infinity,),
                     Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -109,7 +108,7 @@ class _MyAppState extends State<MyHome> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "American Style",
+                          "Japanese Style",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
@@ -149,7 +148,7 @@ class _MyAppState extends State<MyHome> {
               ),
 
               
-              SizedBox(height: 30,),
+              SizedBox(height: 20,),
               
               // Most Popular
               Padding(

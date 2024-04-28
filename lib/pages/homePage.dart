@@ -50,7 +50,7 @@ class _MyAppState extends State<MyHome> {
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: Center(
                   child: Container(
-                    height: 50,
+                    height: 40,
                     child: TextField(
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
@@ -63,6 +63,7 @@ class _MyAppState extends State<MyHome> {
                         ),
                         hintText: "Search for restaurants...",
                         prefixIcon: Icon(Icons.search),
+                        contentPadding: EdgeInsets.only(top: 4.5)
                       ),
                     ),
                   ),
@@ -72,10 +73,10 @@ class _MyAppState extends State<MyHome> {
               SizedBox(height: 10,),
               // Image
               SizedBox(
-                height: 300,
+                height: 285,
                 child: Stack(
                   children: [
-                    Image.asset(fit: BoxFit.cover,"lib/images/sushi.jpg",width: double.infinity, height: double.infinity,),
+                    Image.asset(fit: BoxFit.cover,"lib/images/ff.jpg",width: double.infinity, height: double.infinity,),
                     Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -96,7 +97,7 @@ class _MyAppState extends State<MyHome> {
                         child: Text(
                           "12 Places",
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 13,
                             color: Colors.white,
                           ),
                         ),
@@ -108,9 +109,9 @@ class _MyAppState extends State<MyHome> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "Japanese Style",
+                          "Asian Style",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 21,
                             color: Colors.white,
                           ),
                         ),

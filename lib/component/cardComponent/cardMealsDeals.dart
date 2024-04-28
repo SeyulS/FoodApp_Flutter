@@ -19,7 +19,10 @@ class cardMealDeals extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(4),
+              topLeft: Radius.circular(4)
+            ),
             child: AspectRatio(
               aspectRatio: 16 / 10, 
               child: Image(

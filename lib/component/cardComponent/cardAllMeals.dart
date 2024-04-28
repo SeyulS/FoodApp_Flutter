@@ -9,16 +9,17 @@ class cardAllMeals extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10),
       child: Card(
         child: Column(
           children: [
-            ClipRect(
+            ClipRRect(
+              borderRadius: BorderRadius.only(topRight: Radius.circular(4),topLeft: Radius.circular(4)),
               child: AspectRatio(
-                aspectRatio: 16/10,
+                aspectRatio: 16 / 10, 
                 child: Image(
                   image: AssetImage(img),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -74,7 +75,6 @@ class cardAllMeals extends StatelessWidget {
                 ],
               ),
             ),
-            
             SizedBox(height: 10,)
           ],
         ),
